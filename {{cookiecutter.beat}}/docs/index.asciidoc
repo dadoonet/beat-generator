@@ -2,4 +2,18 @@
 
 Welcome to the {{cookiecutter.beat|capitalize}} documentation.
 
+# Elasticsearch template
 
+To push elasticsearch template in your elasticsearch cluster, you can run the following command.
+
+On Linux/MacOSX:
+
+```sh
+curl -XPUT 'http://localhost:9200/_template/{{cookiecutter.beat}}' -d@etc/{{cookiecutter.beat}}.template.json
+```
+
+On windows:
+
+```
+PS C:\Program Files\{{cookiecutter.beat}}> Invoke-WebRequest -Method Put -InFile etc\{{cookiecutter.beat}}.template.json -Uri http://localhost:9200/_template/{{cookiecutter.beat}}?pretty
+```
